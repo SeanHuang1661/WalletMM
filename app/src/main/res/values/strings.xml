@@ -4,6 +4,8 @@
     <string name="app_name">钱包秘书</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login">登录</string>
+    <string name="login_btn_add">添加</string>
+    <string name="login_btn_edit">编辑</string>
 
 </resources>

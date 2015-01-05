@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/user_shower_tv"
+        style="@style/user_shower_tv"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:id="@+id/user_shower_btn_1"
+        style="@style/user_shower_btn"
+        android:layout_toLeftOf="@id/user_shower_tv"
+        />
+    <Button
+        android:id="@+id/user_shower_btn_2"
+        style="@style/user_shower_btn"
+        android:layout_toRightOf="@id/user_shower_tv"/>
+</RelativeLayout>

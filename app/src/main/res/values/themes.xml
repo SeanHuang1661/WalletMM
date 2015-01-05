@@ -29,20 +29,22 @@
         <item name="actionModeBackground">@drawable/cab_background_top_mythems</item>
         <item name="actionModeSplitBackground">@drawable/cab_background_bottom_mythems</item>
         <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Mythems</item>
-
-
     </style>
+
 
     <style name="ActionBar.Solid.Mythems" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
         <item name="background">@drawable/ab_solid_mythems</item>
         <item name="backgroundStacked">@drawable/ab_stacked_solid_mythems</item>
         <item name="backgroundSplit">@drawable/ab_bottom_solid_mythems</item>
         <item name="progressBarStyle">@style/ProgressBar.Mythems</item>
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
     </style>
+
 
     <style name="ActionBar.Transparent.Mythems" parent="@style/Widget.AppCompat.Light.ActionBar">
         <item name="background">@drawable/ab_transparent_mythems</item>
         <item name="progressBarStyle">@style/ProgressBar.Mythems</item>
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
     </style>
 
     <style name="PopupMenu.Mythems" parent="@style/Widget.AppCompat.Light.PopupMenu">

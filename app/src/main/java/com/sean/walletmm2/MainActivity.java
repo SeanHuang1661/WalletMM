@@ -1,9 +1,12 @@
 package com.sean.walletmm2;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.sean.ui.LoginActivity;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,9 +15,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
 
-        //test github
+        //转到登录页面
+        startActivity(new Intent(this, LoginActivity.class));
     }
 
 

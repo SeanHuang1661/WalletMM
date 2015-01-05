@@ -2,8 +2,16 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.sean.ui.LoginActivity">
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
+
+    <item android:id="@+id/login_btn_add"
+          android:title="@string/login_btn_add"
           android:orderInCategory="100"
-          app:showAsAction="never"/>
+          android:icon="@drawable/add_defual"
+          app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/login_btn_edit"
+          android:title="@string/login_btn_edit"
+          android:orderInCategory="100"
+          android:icon="@drawable/edit_defual"
+          app:showAsAction="ifRoom"/>
 </menu>
