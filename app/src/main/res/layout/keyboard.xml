@@ -2,48 +2,46 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
     >
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/keyboard_et_marginTop"
         android:layout_centerHorizontal="true"
-        android:id="@+id/keyboard_rl_et"
+        android:id="@+id/layKeyboardEt"
         >
 
-        <EditText
-            style="@style/keyboard_editText"
-            android:id="@+id/keyboard_et_1"
+        <TextView
+            style="@style/etKeyboard"
+            android:id="@+id/etKeyboard_1"
             />
-        <EditText
-            style="@style/keyboard_editText"
-            android:id="@+id/keyboard_et_2"
-            android:layout_toRightOf="@id/keyboard_et_1"
+        <TextView
+            style="@style/etKeyboard"
+            android:id="@+id/etKeyboard_2"
+            android:layout_toRightOf="@id/etKeyboard_1"
             android:layout_marginLeft="@dimen/keyboard_et_margin_size"
             />
-        <EditText
-            style="@style/keyboard_editText"
-            android:id="@+id/keyboard_et_3"
-            android:layout_toRightOf="@id/keyboard_et_2"
+        <TextView
+            style="@style/etKeyboard"
+            android:id="@+id/etKeyboard_3"
+            android:layout_toRightOf="@id/etKeyboard_2"
             android:layout_marginLeft="@dimen/keyboard_et_margin_size"
             />
-        <EditText
-            style="@style/keyboard_editText"
-            android:id="@+id/keyboard_et_4"
-            android:layout_toRightOf="@id/keyboard_et_3"
+        <TextView
+            style="@style/etKeyboard"
+            android:id="@+id/etKeyboard_4"
+            android:layout_toRightOf="@id/etKeyboard_3"
             android:layout_marginLeft="@dimen/keyboard_et_margin_size"
             />
-        <EditText
-            style="@style/keyboard_editText"
-            android:id="@+id/keyboard_et_5"
-            android:layout_toRightOf="@id/keyboard_et_4"
+        <TextView
+            style="@style/etKeyboard"
+            android:id="@+id/etKeyboard_5"
+            android:layout_toRightOf="@id/etKeyboard_4"
             android:layout_marginLeft="@dimen/keyboard_et_margin_size"
             />
-        <EditText
-            style="@style/keyboard_editText"
-            android:id="@+id/keyboard_et_6"
-            android:layout_toRightOf="@id/keyboard_et_5"
+        <TextView
+            style="@style/etKeyboard"
+            android:id="@+id/etKeyboard_6"
+            android:layout_toRightOf="@id/etKeyboard_5"
             android:layout_marginLeft="@dimen/keyboard_et_margin_size"
             />
     </RelativeLayout>
@@ -51,84 +49,95 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/keyboard_rl_et"
+        android:layout_below="@id/layKeyboardEt"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         >
 
         <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_1"
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboard_1"
+            android:text="1"
             />
         <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_2"
-            android:layout_toRightOf="@id/keyboard_btn_1"
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboard_2"
+            android:layout_toRightOf="@id/btnKeyboard_1"
             android:layout_marginLeft="@dimen/keyboard_btn_margin_size"
+            android:text="2"
             />
         <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_3"
-            android:layout_toRightOf="@id/keyboard_btn_2"
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboard_3"
+            android:layout_toRightOf="@id/btnKeyboard_2"
             android:layout_marginLeft="@dimen/keyboard_btn_margin_size"
+            android:text="3"
             />
         <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_4"
-            android:layout_below="@id/keyboard_btn_1"
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboard_4"
+            android:layout_below="@id/btnKeyboard_1"
             android:layout_marginTop="@dimen/keyboard_btn_margin_size"
+            android:text="4"
             />
         <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_5"
-            android:layout_below="@id/keyboard_btn_2"
-            android:layout_toRightOf="@id/keyboard_btn_4"
-            android:layout_marginLeft="@dimen/keyboard_btn_margin_size"
-            android:layout_marginTop="@dimen/keyboard_btn_margin_size"
-            />
-        <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_6"
-            android:layout_below="@id/keyboard_btn_3"
-            android:layout_toRightOf="@id/keyboard_btn_5"
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboard_5"
+            android:layout_below="@id/btnKeyboard_2"
+            android:layout_toRightOf="@id/btnKeyboard_4"
             android:layout_marginLeft="@dimen/keyboard_btn_margin_size"
             android:layout_marginTop="@dimen/keyboard_btn_margin_size"
+            android:text="5"
             />
         <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_7"
-            android:layout_below="@id/keyboard_btn_4"
-            android:layout_marginTop="@dimen/keyboard_btn_margin_size"
-            />
-        <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_8"
-            android:layout_below="@id/keyboard_btn_5"
-            android:layout_toRightOf="@id/keyboard_btn_7"
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboard_6"
+            android:layout_below="@id/btnKeyboard_3"
+            android:layout_toRightOf="@id/btnKeyboard_5"
             android:layout_marginLeft="@dimen/keyboard_btn_margin_size"
             android:layout_marginTop="@dimen/keyboard_btn_margin_size"
+            android:text="6"
             />
         <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_9"
-            android:layout_below="@id/keyboard_btn_6"
-            android:layout_toRightOf="@id/keyboard_btn_8"
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboard_7"
+            android:layout_below="@id/btnKeyboard_4"
+            android:layout_marginTop="@dimen/keyboard_btn_margin_size"
+            android:text="7"
+            />
+        <Button
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboard_8"
+            android:layout_below="@id/btnKeyboard_5"
+            android:layout_toRightOf="@id/btnKeyboard_7"
             android:layout_marginLeft="@dimen/keyboard_btn_margin_size"
             android:layout_marginTop="@dimen/keyboard_btn_margin_size"
+            android:text="8"
             />
         <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_0"
-            android:layout_below="@id/keyboard_btn_8"
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboard_9"
+            android:layout_below="@id/btnKeyboard_6"
+            android:layout_toRightOf="@id/btnKeyboard_8"
+            android:layout_marginLeft="@dimen/keyboard_btn_margin_size"
             android:layout_marginTop="@dimen/keyboard_btn_margin_size"
-            android:layout_alignLeft="@id/keyboard_btn_8"
+            android:text="9"
             />
         <Button
-            style="@style/keyboard_button"
-            android:id="@+id/keyboard_btn_clean"
-            android:layout_below="@id/keyboard_btn_9"
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboard_0"
+            android:layout_below="@id/btnKeyboard_8"
             android:layout_marginTop="@dimen/keyboard_btn_margin_size"
-            android:layout_alignLeft="@id/keyboard_btn_9"
+            android:layout_alignLeft="@id/btnKeyboard_8"
+            android:text="0"
+            />
+        <Button
+            style="@style/btnKeyboard"
+            android:id="@+id/btnKeyboardClean"
+            android:layout_below="@id/btnKeyboard_9"
+            android:layout_marginTop="@dimen/keyboard_btn_margin_size"
+            android:layout_alignLeft="@id/btnKeyboard_9"
+            android:text="clean"
             />
 
     </RelativeLayout>

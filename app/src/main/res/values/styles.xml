@@ -7,21 +7,28 @@
     </style>
 
     <!-- 数字键盘 -->
-    <style name="keyboard_editText">
+    <style name="etKeyboard">
         <item name="android:layout_width">@dimen/keyboard_et_size</item>
         <item name="android:layout_height">@dimen/keyboard_et_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:background">@drawable/passwordbox_64</item>
+        <item name="android:textColor">@color/black</item>
     </style>
-    <style name="keyboard_button">
+    <style name="btnKeyboard">
         <item name="android:layout_width">@dimen/keyboard_btn_size</item>
         <item name="android:layout_height">@dimen/keyboard_btn_size</item>
+        <item name="android:gravity">center</item>
     </style>
     <!--用户名显示框 -->
-    <style name="user_shower_btn">
-        <item name="android:layout_width">30dp</item>
+    <style name="btnUserShower">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+    <style name="tvUserShower">
+        <item name="android:layout_width">150dp</item>
         <item name="android:layout_height">30dp</item>
     </style>
-    <style name="user_shower_tv">
-        <item name="android:layout_width">30dp</item>
-        <item name="android:layout_height">80dp</item>
-    </style>
+    <!-- 登录页面 -->
+
 </resources>
