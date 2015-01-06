@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.sean.business.BusinessCheck;
 import com.sean.model.ModelKeyboard;
 import com.sean.walletmm2.R;
 
@@ -81,7 +82,11 @@ public class ActivityLogin extends ActivityFrame implements ModelKeyboard.CheckL
     };
 
     @Override
-    public void check(ArrayList<String> pList) {
-
+    public boolean check(ArrayList<String> pList) {
+        if (BusinessCheck.newInstence().check(pList)) {
+            openActivity(ActivityMain.class);
+            return true;
+        }
+        return false;
     }
 }

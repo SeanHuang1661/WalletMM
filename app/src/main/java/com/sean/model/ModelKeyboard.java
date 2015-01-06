@@ -85,16 +85,14 @@ public class ModelKeyboard {
         if (index < etList.size()) {
             pList.add(p);
             TextView et = etList.get(index);
-            index ++ ;
             et.setText(R.string.loginPasswordMark);
-        } else {
-            clean();
         }
-
-        if (index == etList.size()) {
+        index ++ ;
+        if (index == etList.size()){
             if (activity instanceof CheckListener) {
-
-                ((CheckListener)activity).check(pList);
+                if(!((CheckListener)activity).check(pList)){
+                    clean();
+                }
             }
         }
     }
@@ -107,12 +105,7 @@ public class ModelKeyboard {
         }
     }
 
-    public ArrayList<String> getpList() {
-
-        return pList;
-    }
-
     public interface CheckListener {
-        public void check(ArrayList<String> pList);
+        public boolean check(ArrayList<String> pList);
     }
 }

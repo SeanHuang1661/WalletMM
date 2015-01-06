@@ -12,15 +12,15 @@ public class BusinessData {
     public static HashMap<Integer, String> pMap = new HashMap();
 
     static {
-        pMap.put(R.id.btnKeyboard_1, "f");
-        pMap.put(R.id.btnKeyboard_2, "g");
-        pMap.put(R.id.btnKeyboard_3, "j");
-        pMap.put(R.id.btnKeyboard_4, "v");
-        pMap.put(R.id.btnKeyboard_5, "u");
-        pMap.put(R.id.btnKeyboard_6, "k");
-        pMap.put(R.id.btnKeyboard_7, "z");
-        pMap.put(R.id.btnKeyboard_8, "l");
-        pMap.put(R.id.btnKeyboard_9, "c");
-        pMap.put(R.id.btnKeyboard_0, "b");
+        pMap.put(R.id.btnKeyboard_1, "1");
+        pMap.put(R.id.btnKeyboard_2, "2");
+        pMap.put(R.id.btnKeyboard_3, "3");
+        pMap.put(R.id.btnKeyboard_4, "4");
+        pMap.put(R.id.btnKeyboard_5, "5");
+        pMap.put(R.id.btnKeyboard_6, "6");
+        pMap.put(R.id.btnKeyboard_7, "7");
+        pMap.put(R.id.btnKeyboard_8, "8");
+        pMap.put(R.id.btnKeyboard_9, "9");
+        pMap.put(R.id.btnKeyboard_0, "0");
     }
 }

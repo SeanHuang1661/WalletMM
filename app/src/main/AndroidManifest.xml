@@ -8,8 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Mythems" >
         <activity
-            android:name="com.sean.activity.ActivityLogin"
-            android:label="@string/title_activity_login" >
+            android:name="com.sean.activity.ActivityLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
