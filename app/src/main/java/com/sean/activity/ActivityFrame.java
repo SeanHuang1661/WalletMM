@@ -81,7 +81,6 @@ public abstract class ActivityFrame extends ActivityBase {
      * 设置标题
      */
     protected void doSetTitle (int resourceTitle) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setTitle(resourceTitle);
     }
 
