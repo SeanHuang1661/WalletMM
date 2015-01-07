@@ -1,0 +1,39 @@
+apply plugin: 'android-library'
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:21.0.3'
+}
+
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+    sourceSets {
+        main {
+            manifest {
+                srcFile 'AndroidManifest.xml'
+            }
+            java {
+                srcDir 'src'
+            }
+            res {
+                srcDir 'res'
+            }
+            assets {
+                srcDir 'assets'
+            }
+            resources {
+                srcDir 'src'
+            }
+            aidl {
+                srcDir 'src'
+            }
+        }
+    }
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 21
+    }
+    productFlavors {
+    }
+}

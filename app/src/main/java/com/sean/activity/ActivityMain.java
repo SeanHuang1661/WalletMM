@@ -1,11 +1,9 @@
 package com.sean.activity;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.sean.walletmm2.R;
+import com.slidingmenu.lib.SlidingMenu;
 
 public class ActivityMain extends ActivityFrame {
 
@@ -14,8 +12,23 @@ public class ActivityMain extends ActivityFrame {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initView();
+        initListener();
+        initSlidingMenu();
     }
 
+    private void initSlidingMenu () {
+
+        SlidingMenu menu = new SlidingMenu(this);
+        menu.setMode(SlidingMenu.LEFT);
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        menu.setShadowWidthRes(R.dimen.slidingMenuShadowWidth);
+        menu.setShadowDrawable(R.drawable.shadow_slidingmenu);
+        menu.setBehindOffsetRes(R.dimen.slidingMenuOffset);
+        menu.setFadeDegree(0.35f);
+        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+//        menu.setMenu(R.layout.menu);
+    }
 
     @Override
     public void initView() {
