@@ -8,24 +8,19 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Mythems" >
         <activity
-            android:name="com.sean.activity.ActivityLogin">
+            android:name="com.sean.activity.ActivityLogin"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.sean.activity.ActivityBase"
-            android:label="@string/title_activity_activity_base" >
-        </activity>
-        <activity
-            android:name="com.sean.activity.ActivityFrame"
-            android:label="@string/title_activity_activity_frame" >
-        </activity>
+
         <activity
             android:name="com.sean.activity.ActivityMain"
-            android:label="@string/title_activity_activity_main" >
+            android:label="@string/mainTitle"
+            >
         </activity>
     </application>
 

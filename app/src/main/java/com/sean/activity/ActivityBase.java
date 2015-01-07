@@ -18,16 +18,29 @@ public class ActivityBase extends ActionBarActivity {
         super.onCreate(savedInstanceState);
     }
 
-    protected void openActivity(Class activityClass) {
+    /**
+     * 打开其他activity
+     * @param activityClass
+     */
+    protected void doOpenActivity(Class activityClass) {
 
         Intent intent = new Intent(this, activityClass);
         startActivity(intent);
         finish();
     }
 
-    protected void showMsg(String msg) {
+    /**
+     * 显示信息
+     * @param resourceMsg
+     */
+    protected void doShowMsg(int resourceMsg) {
 
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, resourceMsg, Toast.LENGTH_SHORT).show();
+    }
+
+    protected void doShowMsg(String stringMsg) {
+
+        Toast.makeText(this, stringMsg, Toast.LENGTH_SHORT).show();
     }
 
     protected void showAlertDialog() {

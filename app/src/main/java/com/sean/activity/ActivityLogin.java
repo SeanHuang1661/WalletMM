@@ -25,11 +25,12 @@ public class ActivityLogin extends ActivityFrame implements ModelKeyboard.CheckL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        doSetTitle(R.string.loginTitle);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initView();
         initListener();
-        createMenu(R.menu.menu_login);
+        doCreateMenu(R.menu.menu_activity_login);
     }
 
     @Override
@@ -71,11 +72,11 @@ public class ActivityLogin extends ActivityFrame implements ModelKeyboard.CheckL
 
             switch (v.getId()) {
                 case R.id.btnUserShowerLeft:
-                    showMsg("btnUserShowerLeft");
+                    doShowMsg("btnUserShowerLeft");
                     break;
 
                 case R.id.btnUserShowerRight:
-                    showMsg("btnUserShowerRight");
+                    doShowMsg("btnUserShowerRight");
                     break;
             }
         }
@@ -84,7 +85,7 @@ public class ActivityLogin extends ActivityFrame implements ModelKeyboard.CheckL
     @Override
     public boolean check(ArrayList<String> pList) {
         if (BusinessCheck.newInstence().check(pList)) {
-            openActivity(ActivityMain.class);
+            doOpenActivity(ActivityMain.class);
             return true;
         }
         return false;

@@ -3,14 +3,14 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.sean.activity.ActivityLogin">
 
-    <item android:id="@+id/login_btn_add"
-          android:title="@string/login_btn_add"
+    <item android:id="@+id/btnLoginAdd"
+          android:title="@string/btnLoginAdd"
           android:orderInCategory="100"
           android:icon="@drawable/add_defual"
           app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/login_btn_edit"
-          android:title="@string/login_btn_edit"
+    <item android:id="@+id/btnLoginEdit"
+          android:title="@string/btnLoginEdit"
           android:orderInCategory="100"
           android:icon="@drawable/edit_defual"
           app:showAsAction="ifRoom"/>

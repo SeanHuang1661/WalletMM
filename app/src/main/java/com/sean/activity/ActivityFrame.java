@@ -1,15 +1,25 @@
 package com.sean.activity;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuItem;
+import android.view.Window;
 
 import com.sean.walletmm2.R;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public abstract class ActivityFrame extends ActivityBase {
 
-    int menuXml ;
+    private int resourceMenuXml = 0;
+
+    private int indexClickBack = 0;
+
+    private Timer timer = null;
+
+    private final int TIME_WAIT_FINISH = 3000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -19,16 +29,61 @@ public abstract class ActivityFrame extends ActivityBase {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
-        if (menuXml != 0)
-            getMenuInflater().inflate(menuXml, menu);
+
+        if (resourceMenuXml != 0)
+            getMenuInflater().inflate(resourceMenuXml, menu);
         return true;
     }
 
-    protected void createMenu(int menuXml) {
-        this.menuXml = menuXml;
+    /**
+     * 创建菜单
+     * @param resourceMenuXml
+     */
+    protected void doCreateMenu(int resourceMenuXml) {
+        this.resourceMenuXml = resourceMenuXml;
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            doExit();
+        }
+        return true;
+    }
+
+    /**
+     * 退出操作
+     */
+    private void doExit() {
+        indexClickBack += 1 ;
+
+        if (indexClickBack == 1) {
+            doShowMsg(R.string.frame_again_finish);
+
+            if (timer == null) {
+                timer = new Timer();
+            }
+
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    indexClickBack = 0;
+                }
+            }, TIME_WAIT_FINISH);
+
+        } else if (indexClickBack == 2) {
+            finish();
+        }
+    }
+
+    /**
+     * 设置标题
+     */
+    protected void doSetTitle (int resourceTitle) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setTitle(resourceTitle);
+    }
 
     public abstract void initView();
 
