@@ -19,7 +19,6 @@
 
         <activity
             android:name="com.sean.activity.ActivityMain"
-            android:label="@string/mainTitle"
             >
         </activity>
     </application>

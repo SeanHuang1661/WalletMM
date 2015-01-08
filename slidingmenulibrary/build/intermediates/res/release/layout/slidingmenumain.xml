@@ -2,4 +2,4 @@
 <com.slidingmenu.lib.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
                                  android:id="@+id/slidingmenumain"
                                  android:layout_width="fill_parent"
-                                 android:layout_height="fill_parent"/><!-- From: file:/E:/MyAndroidIDE/AndroidProject/WalletMM/slidingmenulibrary/res/layout/slidingmenumain.xml -->
+                                 android:layout_height="fill_parent"/><!-- From: file:/E:/MyAndroidIDE/studiospace/WalletMM/slidingmenulibrary/res/layout/slidingmenumain.xml -->
