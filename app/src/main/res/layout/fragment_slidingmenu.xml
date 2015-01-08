@@ -1,12 +1,34 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context="com.sean.fragment.FragmentSlidingmenu">
 
-    <ListView
-        android:id="@+id/lv_slidingmenu"
+    <RelativeLayout
+        android:id="@+id/laySlidingmenuUser"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        >
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/ivSlidingmenuUserPic"
+            style="@style/ivSlidingmenuUserPic"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/tvSlidingmenuUserName"
+            style="@style/tvSlidingmenuUserName"
+            android:layout_below="@id/ivSlidingmenuUserPic"
+            android:layout_centerHorizontal="true"
+            android:text="用户名"
+            />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lvSlidingmenuList"
+        style="@style/lvSlidingmenuList"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/laySlidingmenuUser"
+        />
+
+</RelativeLayout>

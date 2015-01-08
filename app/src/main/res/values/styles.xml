@@ -31,4 +31,17 @@
     </style>
     <!-- 登录页面 -->
 
+    <!-- 测滑菜单 -->
+    <style name="ivSlidingmenuUserPic">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+    </style>
+    <style name="tvSlidingmenuUserName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="lvSlidingmenuList">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 </resources>
