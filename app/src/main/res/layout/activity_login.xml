@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        layout="@layout/usershower"
+        layout="@layout/layout_usershower"
         >
 
     </include>
@@ -27,7 +27,7 @@
         android:layout_below="@id/incLoginUsershower"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        layout="@layout/keyboard">
+        layout="@layout/layout_keyboard">
 
     </include>
 

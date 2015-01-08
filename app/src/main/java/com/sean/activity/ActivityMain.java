@@ -13,6 +13,8 @@ public class ActivityMain extends ActivityFrame {
     SlidingMenu menu;
 
     Button titleMenu ;
+
+    View actionBarView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -23,7 +25,6 @@ public class ActivityMain extends ActivityFrame {
         initListener();
         initSlidingMenu();
 
-        new BusinessSetActionBar(this, R.layout.title_main);
     }
 
     private void initSlidingMenu () {
@@ -36,17 +37,21 @@ public class ActivityMain extends ActivityFrame {
         menu.setBehindOffsetRes(R.dimen.slidingMenuOffset);
         menu.setFadeDegree(0.35f);
         menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-//        menu.setMenu(R.layout.menu);
+        menu.setMenu(R.layout.layout_slidingmenu);
     }
 
     @Override
     public void initView() {
-//        titleMenu = (Button)findViewById(R.id.btnMainTitleMenu);
+        BusinessSetActionBar actionBar = new BusinessSetActionBar(this, R.layout.title_main);
+        actionBar.doChange();
+        actionBarView = actionBar.getLayout();
+
+        titleMenu = (Button)actionBarView.findViewById(R.id.btnMainTitleMenu);
     }
 
     @Override
     public void initListener() {
-//        titleMenu.setOnClickListener(titleOnClickListener);
+        titleMenu.setOnClickListener(titleOnClickListener);
     }
 
     View.OnClickListener titleOnClickListener = new View.OnClickListener(){

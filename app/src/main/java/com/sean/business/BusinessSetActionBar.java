@@ -2,7 +2,6 @@ package com.sean.business;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
 import android.view.View;
 
 /**
@@ -10,25 +9,33 @@ import android.view.View;
  */
 public class BusinessSetActionBar {
 
-    ActionBarActivity activity;
+    private ActionBarActivity activity;
 
-    int resourceLayoutXml;
+    private int resourceLayoutXml;
+
+    private ActionBar actionBar;
+
+    private ActionBar.LayoutParams layout;
+
+    private View actionBarView;
 
     public BusinessSetActionBar (ActionBarActivity activity , int resourceLayoutXml) {
         this.activity = activity;
         this.resourceLayoutXml = resourceLayoutXml;
 
-        ActionBar.LayoutParams layout = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT , ActionBar.LayoutParams.MATCH_PARENT );
-        LayoutInflater layoutInflater = activity.getLayoutInflater();
-        View titleMain = layoutInflater.inflate(resourceLayoutXml , null);
+        actionBarView = activity.getLayoutInflater().inflate(resourceLayoutXml , null);
+        layout = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT , ActionBar.LayoutParams.MATCH_PARENT );
 
-        ActionBar actionBar =activity.getSupportActionBar();
+        actionBar =activity.getSupportActionBar();
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setCustomView(titleMain , layout);
         actionBar.setDisplayShowCustomEnabled(true);
     }
 
-    public View getActionBarLayout () {
-        return null;
+    public View getLayout() {
+        return actionBarView;
+    }
+
+    public void doChange () {
+        actionBar.setCustomView(actionBarView , layout);
     }
 }
