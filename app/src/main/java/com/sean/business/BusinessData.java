@@ -1,5 +1,12 @@
 package com.sean.business;
 
+import android.app.Fragment;
+
+import com.sean.fragment.FragmentAccountList;
+import com.sean.fragment.FragmentAssets;
+import com.sean.fragment.FragmentBackup;
+import com.sean.fragment.FragmentSetup;
+import com.sean.fragment.FragmentStatistics;
 import com.sean.walletmm2.R;
 
 import java.util.ArrayList;
@@ -18,6 +25,8 @@ public class BusinessData {
     public static ArrayList<Integer> dataSlidingmenuItemPic = new ArrayList();
 
     public static ArrayList<Integer> dataSlidingmenuItemName = new ArrayList();
+
+    public static HashMap<Integer, Fragment> dataFragmentInstance = new HashMap<>();
 
     static {
         dataKeyboard.put(R.id.btnKeyboard_1, "1");
@@ -48,5 +57,14 @@ public class BusinessData {
         dataSlidingmenuItemName.add(R.string.slidingmenuItemName4);
         dataSlidingmenuItemName.add(R.string.slidingmenuItemName5);
         dataSlidingmenuItemName.add(R.string.slidingmenuItemName6);
+    }
+
+    static {
+        dataFragmentInstance.put(0, FragmentAccountList.getInstance());
+        dataFragmentInstance.put(1, FragmentStatistics.getInstance());
+        dataFragmentInstance.put(2, FragmentAssets.getInstance());
+        dataFragmentInstance.put(3, FragmentBackup.getInstance());
+        dataFragmentInstance.put(4, FragmentSetup.getInstance());
+        dataFragmentInstance.put(6, null);
     }
 }

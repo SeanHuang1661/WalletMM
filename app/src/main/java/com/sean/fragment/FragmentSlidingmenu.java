@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.sean.adapter.AdapterSlidingmenu;
@@ -27,9 +28,12 @@ public class FragmentSlidingmenu extends FragmentFrame {
 
     private ListView slidingmenuList ;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    /**
+     * Activity和Fragment的连接接口
+     * 用来响应Fragment的跳转
+     */
+    public interface OnFragmentChangeListenre {
+        public void onFragmentChange(int position);
     }
 
     @Override
@@ -49,7 +53,13 @@ public class FragmentSlidingmenu extends FragmentFrame {
 
     @Override
     protected void initListener() {
+        slidingmenuList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ((OnFragmentChangeListenre)getActivity()).onFragmentChange(position);
+            }
+        });
     }
 
     @Override

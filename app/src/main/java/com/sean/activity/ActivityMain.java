@@ -1,24 +1,26 @@
 package com.sean.activity;
 
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.sean.business.BusinessData;
 import com.sean.business.BusinessSetActionBar;
 import com.sean.fragment.FragmentSlidingmenu;
 import com.sean.walletmm2.R;
 import com.slidingmenu.lib.SlidingMenu;
 
-public class ActivityMain extends ActivityFrame {
+public class ActivityMain extends ActivityFrame implements FragmentSlidingmenu.OnFragmentChangeListenre{
 
-    SlidingMenu menu;
+    private SlidingMenu menu;
 
-    Button titleMenu ;
+    private Button titleMenu ;
 
-    View actionBarView;
+    private View actionBarView;
 
-    FragmentTransaction fragmentTransaction;
+    private FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,4 +76,24 @@ public class ActivityMain extends ActivityFrame {
             }
         }
     };
+
+    /**
+     * 继承于FragmentSlidingmenu.OnFragmentChangeListenre
+     * 用来响应Fragment的跳转
+     * @param position
+     */
+    @Override
+    public void onFragmentChange(int position) {
+        fragmentTransaction = getFragmentManager().beginTransaction();
+        Fragment fragment = BusinessData.dataFragmentInstance.get(position);
+        if (fragment != null) {
+            fragmentTransaction.replace(R.id.layMainContainer, fragment);
+            fragmentTransaction.commit();
+        }
+        if (position == BusinessData.dataSlidingmenuItemName.size()-1) {
+            doOpenActivity(ActivityLogin.class);
+        }
+        //关闭Slidingmenu
+        menu.toggle();
+    }
 }
