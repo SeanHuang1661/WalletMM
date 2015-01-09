@@ -50,4 +50,5 @@ public class FragmentAccountList extends FragmentFrame{
     protected void initAdapter() {
 
     }
+
 }

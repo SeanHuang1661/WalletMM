@@ -40,9 +40,11 @@ public abstract class ActivityFrame extends ActivityBase {
 
     /**
      * 创建菜单
+     *
      * @param resourceMenuXml
      */
     protected void doCreateMenu(int resourceMenuXml) {
+
         this.resourceMenuXml = resourceMenuXml;
     }
 
@@ -59,7 +61,8 @@ public abstract class ActivityFrame extends ActivityBase {
      * 退出操作
      */
     private void doExit() {
-        indexClickBack += 1 ;
+
+        indexClickBack += 1;
 
         if (indexClickBack == 1) {
             doShowMsg(R.string.frame_again_finish);
@@ -71,6 +74,7 @@ public abstract class ActivityFrame extends ActivityBase {
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
+
                     indexClickBack = 0;
                 }
             }, TIME_WAIT_FINISH);
@@ -83,22 +87,25 @@ public abstract class ActivityFrame extends ActivityBase {
     /**
      * 设置标题
      */
-    protected void doSetTitle (int resourceTitle) {
+    protected void doSetTitle(int resourceTitle) {
+
         setTitle(resourceTitle);
     }
 
     /**
      * 管理Fragment
      */
-    protected void doFragemntManage (int resourceContainer, Fragment fragment) {
+    protected void doFragemntManage(int resourceContainer, Fragment fragment) {
 
-            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-            fragmentTransaction.replace(resourceContainer, fragment);
-            fragmentTransaction.commit();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(resourceContainer, fragment);
+        fragmentTransaction.commit();
     }
 
     public abstract void initView();
 
 
-    public abstract void initListener() ;
+    public abstract void initListener();
+
+    public abstract void initActionBar();
 }

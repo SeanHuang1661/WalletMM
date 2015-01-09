@@ -54,6 +54,11 @@ public class ActivityLogin extends ActivityFrame implements ModelKeyboard.CheckL
 
     }
 
+    @Override
+    public void initActionBar() {
+
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

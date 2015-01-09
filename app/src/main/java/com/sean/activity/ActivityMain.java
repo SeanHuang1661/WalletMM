@@ -3,11 +3,11 @@ package com.sean.activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.widget.Button;
 
 import com.sean.business.BusinessData;
-import com.sean.business.BusinessSetActionBar;
 import com.sean.fragment.FragmentAccountList;
 import com.sean.fragment.FragmentSlidingmenu;
 import com.sean.walletmm2.R;
@@ -27,6 +27,7 @@ public class ActivityMain extends ActivityFrame implements FragmentSlidingmenu.O
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        initActionBar();
         setContentView(R.layout.activity_main);
 
         //此处有一个bug,FragmentSlidingmenu要比FragmentAccountList先被Transaction
@@ -34,7 +35,6 @@ public class ActivityMain extends ActivityFrame implements FragmentSlidingmenu.O
         initSlidingMenu();
         initView();
         initListener();
-
     }
 
     private void initSlidingMenu () {
@@ -55,11 +55,11 @@ public class ActivityMain extends ActivityFrame implements FragmentSlidingmenu.O
     @Override
     public void initView() {
         //设置ActionBar
-        BusinessSetActionBar actionBar = new BusinessSetActionBar(this, R.layout.title_main);
-        actionBar.doChange();
-        actionBarView = actionBar.getLayout();
-
-        titleMenu = (Button)actionBarView.findViewById(R.id.btnMainTitleMenu);
+//        BusinessSetActionBar actionBar = new BusinessSetActionBar(this, R.layout.title_main);
+//        actionBar.doChange();
+//        actionBarView = actionBar.getLayout();
+//
+//        titleMenu = (Button)actionBarView.findViewById(R.id.btnMainTitleMenu);
 
         //设置main初始页面为fragment_accountlist
         doFragemntManage(R.id.layMainContainer, FragmentAccountList.getInstance());
@@ -67,7 +67,17 @@ public class ActivityMain extends ActivityFrame implements FragmentSlidingmenu.O
 
     @Override
     public void initListener() {
-        titleMenu.setOnClickListener(titleOnClickListener);
+//        titleMenu.setOnClickListener(titleOnClickListener);
+    }
+
+    @Override
+    public void initActionBar() {
+        ActionBar actionBar =getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+//        actionBar.setDisplayHomeAsUpEnabled(true);
+//        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_home);
+        actionBar.setIcon(R.drawable.ic_menu_home);
+
     }
 
     View.OnClickListener titleOnClickListener = new View.OnClickListener(){
