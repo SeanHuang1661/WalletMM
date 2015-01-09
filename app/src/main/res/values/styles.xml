@@ -33,15 +33,32 @@
 
     <!-- 测滑菜单 -->
     <style name="ivSlidingmenuUserPic">
-        <item name="android:layout_width">80dp</item>
-        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_width">@dimen/generalViewBig</item>
+        <item name="android:layout_height">@dimen/generalViewBig</item>
+        <item name="android:background">@drawable/add_defual</item>
     </style>
     <style name="tvSlidingmenuUserName">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/generalTextMiddle</item>
+        <item name="android:textColor">@color/black</item>
     </style>
     <style name="lvSlidingmenuList">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ivSlidingmenuItemPic">
+        <item name="android:layout_width">@dimen/generalViewMiddle</item>
+        <item name="android:layout_height">@dimen/generalViewMiddle</item>
+        <item name="android:layout_marginLeft">@dimen/generalPadingSmall</item>
+    </style>
+    <style name="tvSlidingmenuItemName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/generalPadingSmall</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/generalTextMiddle</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>

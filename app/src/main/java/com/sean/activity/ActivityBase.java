@@ -1,14 +1,9 @@
 package com.sean.activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
 import android.widget.Toast;
-
-import com.sean.walletmm2.R;
 
 public class ActivityBase extends ActionBarActivity {
 
@@ -43,6 +38,9 @@ public class ActivityBase extends ActionBarActivity {
         Toast.makeText(this, stringMsg, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 弹出提示框
+     */
     protected void showAlertDialog() {
 
     }

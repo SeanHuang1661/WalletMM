@@ -1,10 +1,8 @@
 package com.sean.model;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.sean.business.BusinessData;
@@ -74,7 +72,7 @@ public class ModelKeyboard {
     View.OnClickListener keybroadOCListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            show(BusinessData.pMap.get(v.getId()));
+            show(BusinessData.dataKeyboard.get(v.getId()));
             if (v.getId() == R.id.btnKeyboardClean) {
                 clean();
             }

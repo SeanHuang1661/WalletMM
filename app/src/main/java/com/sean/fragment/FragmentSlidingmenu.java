@@ -5,27 +5,27 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import com.sean.adapter.AdapterSlidingmenu;
 import com.sean.walletmm2.R;
 
-public class FragmentSlidingmenu extends Fragment {
+public class FragmentSlidingmenu extends FragmentFrame {
 
-    View slidingmenuView;
-
-    private static FragmentSlidingmenu fragmentSlidingmenu;
+    private View view;
 
     private FragmentSlidingmenu () {}
 
-    public static FragmentSlidingmenu getInstance () {
-        if (fragmentSlidingmenu == null) {
-            fragmentSlidingmenu = new FragmentSlidingmenu();
+    private static Fragment fragment;
+
+    public static Fragment getInstance () {
+        if (fragment == null) {
+            fragment = new FragmentSlidingmenu();
         }
-        return fragmentSlidingmenu;
+        return fragment;
     }
 
-    private void initAdapter () {
-        
-    }
+    private ListView slidingmenuList ;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,9 +34,26 @@ public class FragmentSlidingmenu extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        slidingmenuView = inflater.inflate(R.layout.fragment_slidingmenu , container , false);
-        return slidingmenuView;
+        view = inflater.inflate(R.layout.fragment_slidingmenu , container , false);
+        initView();
+        initListener();
+        initAdapter();
+        return view;
     }
 
 
+    @Override
+    protected void initView() {
+        slidingmenuList = (ListView)view.findViewById(R.id.lvSlidingmenuList);
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void initAdapter() {
+        slidingmenuList.setAdapter(new AdapterSlidingmenu(getActivity()));
+    }
 }
