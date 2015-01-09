@@ -1,9 +1,10 @@
 package com.sean.activity;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.Window;
 
 import com.sean.walletmm2.R;
 
@@ -19,6 +20,8 @@ public abstract class ActivityFrame extends ActivityBase {
     private Timer timer = null;
 
     private final int TIME_WAIT_FINISH = 3000;
+
+    private String fragmentTag = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +85,16 @@ public abstract class ActivityFrame extends ActivityBase {
      */
     protected void doSetTitle (int resourceTitle) {
         setTitle(resourceTitle);
+    }
+
+    /**
+     * 管理Fragment
+     */
+    protected void doFragemntManage (int resourceContainer, Fragment fragment) {
+
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(resourceContainer, fragment);
+            fragmentTransaction.commit();
     }
 
     public abstract void initView();

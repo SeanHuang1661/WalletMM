@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.sean.business.BusinessData;
 import com.sean.business.BusinessSetActionBar;
+import com.sean.fragment.FragmentAccountList;
 import com.sean.fragment.FragmentSlidingmenu;
 import com.sean.walletmm2.R;
 import com.slidingmenu.lib.SlidingMenu;
@@ -28,9 +29,11 @@ public class ActivityMain extends ActivityFrame implements FragmentSlidingmenu.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //此处有一个bug,FragmentSlidingmenu要比FragmentAccountList先被Transaction
+        //不然第一次点击AccountList ，FragmentSlidingmenu会消失
+        initSlidingMenu();
         initView();
         initListener();
-        initSlidingMenu();
 
     }
 
@@ -46,18 +49,20 @@ public class ActivityMain extends ActivityFrame implements FragmentSlidingmenu.O
         menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
         menu.setMenu(R.layout.layout_slidingmenu);
 
-        fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.laySlidingmenuContainer, FragmentSlidingmenu.getInstance());
-        fragmentTransaction.commit();
+        doFragemntManage(R.id.laySlidingmenuContainer, FragmentSlidingmenu.getInstance());
     }
 
     @Override
     public void initView() {
+        //设置ActionBar
         BusinessSetActionBar actionBar = new BusinessSetActionBar(this, R.layout.title_main);
         actionBar.doChange();
         actionBarView = actionBar.getLayout();
 
         titleMenu = (Button)actionBarView.findViewById(R.id.btnMainTitleMenu);
+
+        //设置main初始页面为fragment_accountlist
+        doFragemntManage(R.id.layMainContainer, FragmentAccountList.getInstance());
     }
 
     @Override
@@ -84,13 +89,11 @@ public class ActivityMain extends ActivityFrame implements FragmentSlidingmenu.O
      */
     @Override
     public void onFragmentChange(int position) {
-        fragmentTransaction = getFragmentManager().beginTransaction();
         Fragment fragment = BusinessData.dataFragmentInstance.get(position);
         if (fragment != null) {
-            fragmentTransaction.replace(R.id.layMainContainer, fragment);
-            fragmentTransaction.commit();
+            doFragemntManage(R.id.layMainContainer, fragment);
         }
-        if (position == BusinessData.dataSlidingmenuItemName.size()-1) {
+        if (position == BusinessData.SLIDINGMENU_LAST_POSITION) {
             doOpenActivity(ActivityLogin.class);
         }
         //关闭Slidingmenu

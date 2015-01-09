@@ -59,6 +59,10 @@ public class BusinessData {
         dataSlidingmenuItemName.add(R.string.slidingmenuItemName6);
     }
 
+    public static final int SLIDINGMENU_CONUT = dataSlidingmenuItemName.size();
+
+    public static final int SLIDINGMENU_LAST_POSITION = SLIDINGMENU_CONUT - 1;
+
     static {
         dataFragmentInstance.put(0, FragmentAccountList.getInstance());
         dataFragmentInstance.put(1, FragmentStatistics.getInstance());
